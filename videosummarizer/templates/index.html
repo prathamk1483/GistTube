@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/javascript/main.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="helper">
+            <h1>YT Summary</h1>
+            <h3>BY</h3>
+            <div class="h2">
+                <h2 id="element"></h2>
+            </div>
+            <button class="button" onclick="showForm()">Get Started</button>
+        </div>
+        <form id="loginForm" method="post" style="visibility: hidden;">
+            <h3>Paste Link Here</h3>
+            {% csrf_token %} 
+            <label for="username">Link</label>
+            <input type="text" placeholder="Enter Link" id="username" name="username" required>
+            <button type="submit">Start</button>
+        </form>
+    </div>
+<script>
+    
+var typed = new Typed('#element', {
+    strings: ['Pratham Kubetkar', 'Shailesh Kaliya'],
+    typeSpeed: 50,
+    loop: true,
+});
+
+function showForm() {
+    var helperDiv = document.querySelector('.helper');
+    var form = document.getElementById('loginForm');
+    helperDiv.style.display = 'none';
+    form.style.visibility = 'visible';
+}
+</script>
+</body>
+</html>

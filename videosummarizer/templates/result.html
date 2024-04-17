@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{ 
+        margin: 0;
+        padding: 0;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background-image: url(../static/images/1.jpg);
+        background-size: cover;
+        opacity: 0.7;
+    }
+    form{
+        height: 80%;
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.767);
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgb(255, 255, 255);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding: 50px 35px;
+        overflow: auto;
+    }
+    form *{
+        font-family: 'Poppins',sans-serif;
+        color: #3e3e3e;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+    form h3{
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="body">
+        <form id="loginForm" method="">
+            <h3 id="element"></h3>
+        </form>
+    </div>
+<script>
+    var result = "{{ result }}"; // Getting the result from Django context
+    var typed = new Typed('#element', {
+        strings: [result], // Using the result as a string to type
+        typeSpeed: 0.1,
+    });
+</script>
+</body>
+</html>
